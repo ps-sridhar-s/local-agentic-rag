@@ -4,12 +4,13 @@ from generation.output_generation import chit_chat,rag_chat
 from similarity_retrieval.vector_search_tool import vector_search
 
 class Chat_State(TypedDict):
-    user_query:str
-    is_safe:bool
-    rephrased_user_query:str
-    detected_intent:str
-    retrieval_chunks:list
-    response:str
+    user_query: str
+    is_safe: bool
+    rephrased_user_query: str
+    detected_intent: str
+    retrieval_chunks: list
+    response: str
+    evaluation_score: float
    
 
 
@@ -83,10 +84,19 @@ def intent_detection_node(state: Chat_State):
 
 
 def chit_chat_agent_node(state: Chat_State):
-    response=chit_chat(state['rephrased_user_query'])
+    response = chit_chat(state['rephrased_user_query'])
+    if isinstance(response, dict):
+        return {
+            "response": response.get("answer", ""),
+            "evaluation_score": response.get("score", 0.0)
+        }
+
+    if hasattr(response, "content"):
+        response = response.content
 
     return {
-        "response": response
+        "response": response,
+        "evaluation_score": 0.0
     }
 
 def retrieval_query_node(state:Chat_State):
@@ -98,17 +108,23 @@ def retrieval_query_node(state:Chat_State):
     
 
 def rag_agent_node(state):
-
     response = rag_chat(
         user_query=state['rephrased_user_query'],
-        retrived_chunks=state['retrieval_chunks']
+        retrieved_chunks=state['retrieval_chunks']
     )
+
+    if isinstance(response, dict):
+        return {
+            "response": response.get("answer", ""),
+            "evaluation_score": response.get("score", 0.0)
+        }
 
     if hasattr(response, "content"):
         response = response.content
 
     return {
-        "response": response
+        "response": response,
+        "evaluation_score": 0.0
     }
 
 

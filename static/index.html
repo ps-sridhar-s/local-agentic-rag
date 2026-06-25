@@ -1,75 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic AI Assistant</title>
 
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>Agentic AI Platform</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css?v=3" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+
 </head>
 
 <body>
 
-<div class="app-container">
+<div class="app">
 
-    <!-- Sidebar -->
+    <!-- ================= SIDEBAR ================= -->
 
-    <div class="sidebar">
+    <aside class="sidebar">
 
-        <div class="logo">
-            🤖 Agentic AI
-        </div>
+        <div class="brand">
 
-        <button class="new-chat-btn" onclick="clearChat()">
-            + New Chat
-        </button>
+            <div class="logo">
+                🧠
+            </div>
 
-        <div class="history-title">
-            Chat History
-        </div>
+            <div>
 
-        <div id="history-container">
-        </div>
+                <h2>
+                    Agentic AI
+                </h2>
 
-    </div>
+                <span>
+                    Enterprise Assistant
+                </span>
 
-    <!-- Main Chat -->
-
-    <div class="chat-container">
-
-        <div class="header">
-            LangGraph AI Assistant
-        </div>
-
-        <div id="chat-box">
-
-            <div class="welcome">
-                <h1>How can I help you today?</h1>
-                <p>Ask anything about LangChain, Python, AI, or your knowledge base.</p>
             </div>
 
         </div>
 
-        <div class="input-container">
+        <button id="new-chat-btn"
+                class="new-chat-btn">
 
-            <textarea
-                    id="message-input"
-                    placeholder="Message Agentic AI..."
-                    rows="1"></textarea>
+            + New Conversation
 
-            <button onclick="sendMessage()">
-                ➤
-            </button>
+        </button>
+
+        <div class="sidebar-section">
+
+            <h3>
+                Recent Conversations
+            </h3>
+
+            <div id="history-container"
+                 class="history-list">
+
+                <div class="history-empty">
+                    No saved conversations yet
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+    </aside>
+
+
+    <!-- ================= CHAT AREA ================= -->
+
+    <main class="chat-wrapper">
+
+        <header class="top-header">
+
+            <div class="top-header__info">
+
+                <div>
+
+                    <h1>
+                        Agentic AI Assistant
+                    </h1>
+
+                    <p>
+                        LangGraph + RAG + Multi-Agent System
+                    </p>
+
+                </div>
+
+                <div class="status-badge connected">
+
+                    ● Connected
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= HERO SECTION ================= -->
+
+        <section id="chat-box"
+                 class="chat-box">
+
+            <div class="hero">
+
+                <div class="hero-heading">
+
+                    <h1>
+                        Welcome, Sridhar 👋
+                    </h1>
+
+                    <p>
+                        Ask anything about LangChain,
+                        LangGraph, RAG, or simply have a conversation.
+                    </p>
+
+                </div>
+
+                <div class="suggestions">
+
+                    <button class="suggestion-card"
+                            type="button">
+
+                        👋 Say hello to the assistant
+
+                    </button>
+
+                    <button class="suggestion-card"
+                            type="button">
+
+                        🦜 What is LangChain?
+
+                    </button>
+
+                    <button class="suggestion-card"
+                            type="button">
+
+                        🕸️ Explain LangGraph architecture
+
+                    </button>
+
+                    <button class="suggestion-card"
+                            type="button">
+
+                        🔍 What is Retrieval-Augmented Generation (RAG)?
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INPUT AREA ================= -->
+
+        <footer class="input-area">
+
+            <div class="action-buttons">
+
+                <button id="save-btn"
+                        class="action-btn small"
+                        type="button"
+                        title="Download chat">
+
+                    💾 Save Chat
+
+                </button>
+
+                <button id="clear-btn"
+                        class="action-btn small"
+                        type="button"
+                        title="Clear chat">
+
+                    🗑 Clear Chat
+
+                </button>
+
+            </div>
+
+            <div class="input-panel">
+
+                <textarea id="message-input"
+                          placeholder="Ask Agentic AI..."
+                          rows="1"></textarea>
+
+                <div class="input-actions">
+
+                    <button id="send-btn"
+                            class="send-btn"
+                            type="button">
+
+                        ➤
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
 
 </div>
 
-<script src="/static/script.js"></script>
+<script src="/static/script.js?v=3"></script>
 
 </body>
+
 </html>
+

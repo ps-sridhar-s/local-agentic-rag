@@ -1,72 +1,72 @@
 
 =====================================================
-TIME: 2026-06-25 09:03:59,075
+TIME: 2026-06-25 13:15:01,569
 LEVEL: INFO
 
-USER QUESTION: what is langchain ?
+USER QUESTION: Hi
 =====================================================
 
 
 =====================================================
-TIME: 2026-06-25 09:03:59,084
+TIME: 2026-06-25 13:15:01,578
+LEVEL: ERROR
+
+'Input to ChatPromptTemplate is missing variables {\'"answer"\'}.  Expected: [\'"answer"\', \'question\'] Received: [\'question\']\nNote: if you intended {"answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"answer"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+=====================================================
+Traceback (most recent call last):
+  File "C:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\app.py", line 143, in chat
+    result = graph.invoke(
+             ^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3026, in invoke
+    for chunk in self.stream(
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\pregel\main.py", line 2647, in stream
+    for _ in runner.tick(
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\pipeline\rag_chatbot.py", line 87, in chit_chat_agent_node
+    response = chit_chat(state['rephrased_user_query'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\generation\output_generation.py", line 253, in chit_chat
+    response_text = chitchat_chain.invoke(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3442, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\prompts\base.py", line 230, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 2289, in _call_with_config
+    context.run(
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\runnables\config.py", line 526, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\prompts\base.py", line 200, in _format_prompt_with_error_handling
+    inner_input_ = self._validate_input(inner_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\SridharS\Downloads\Sridhar_Project\Local_Agentic_Rag\.venv\Lib\site-packages\langchain_core\prompts\base.py", line 192, in _validate_input
+    raise KeyError(
+KeyError: 'Input to ChatPromptTemplate is missing variables {\'"answer"\'}.  Expected: [\'"answer"\', \'question\'] Received: [\'question\']\nNote: if you intended {"answer"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{"answer"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+During task with name 'chit_chat_agent' and id '1c0ab4e7-e4e3-3723-643c-1ca95be898ea'
+
+=====================================================
+TIME: 2026-06-25 13:15:42,644
 LEVEL: INFO
 
-Loading faiss with AVX512 support.
+USER QUESTION: Hi
 =====================================================
 
 
 =====================================================
-TIME: 2026-06-25 09:03:59,084
-LEVEL: INFO
-
-Could not load library with AVX512 support due to:
-ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:03:59,084
-LEVEL: INFO
-
-Loading faiss with AVX2 support.
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:03:59,084
-LEVEL: INFO
-
-Could not load library with AVX2 support due to:
-ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:03:59,084
-LEVEL: INFO
-
-Loading faiss.
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:03:59,116
-LEVEL: INFO
-
-Successfully loaded faiss.
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:04:01,796
-LEVEL: INFO
-
-HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
-=====================================================
-
-
-=====================================================
-TIME: 2026-06-25 09:04:07,137
+TIME: 2026-06-25 13:16:01,764
 LEVEL: INFO
 
 HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
@@ -74,23 +74,151 @@ HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
 
 
 =====================================================
-TIME: 2026-06-25 09:05:04,412
+TIME: 2026-06-25 13:16:05,341
 LEVEL: INFO
 
-BOT RESPONSE: content="LangChain is an open-source framework for building large language models (LLMs) and multimodal AI applications. It's designed to make it easier for developers to create, train, and deploy LLMs that can understand and generate human-like text.\n\nHere are some key features of LangChain:\n\n1. **Modular architecture**: LangChain is built on a modular architecture, which allows developers to easily combine different components (e.g., models, databases, APIs) to create complex AI applications.\n2. **LLM integration**: LangChain provides pre-built integrations with popular LLMs like LLaMA, BERT, and RoBERTa, making it easy to incorporate these models into your application.\n3. **Data management**: LangChain includes tools for managing large datasets, including data loading, preprocessing, and caching.\n4. **Model training**: LangChain provides a simple interface for training LLMs from scratch or fine-tuning pre-trained models on custom datasets.\n5. **Multimodal support**: LangChain supports multimodal inputs (e.g., text, images, audio) and outputs (e.g., text, images, videos).\n6. **API-first design**: LangChain is designed with APIs in mind, making it easy to integrate with other applications and services.\n\nSome potential use cases for LangChain include:\n\n1. **Chatbots**: Build conversational AI agents that can understand natural language inputs and respond accordingly.\n2. **Content generation**: Use LangChain to generate high-quality content (e.g., articles, social media posts) based on user input or prompts.\n3. **Question answering**: Develop applications that can answer complex questions by combining multiple sources of information.\n4. **Summarization**: Create tools that can summarize long documents or articles into concise, easily digestible summaries.\n\nOverall, LangChain is a powerful framework for building AI applications that require large language models and multimodal inputs/outputs." additional_kwargs={} response_metadata={'model': 'llama3.1:8b', 'created_at': '2026-06-25T03:35:04.4100984Z', 'done': True, 'done_reason': 'stop', 'total_duration': 62608173100, 'load_duration': 4652651600, 'prompt_eval_count': 15, 'prompt_eval_duration': 679263000, 'eval_count': 389, 'eval_duration': 57272283000, 'model_name': 'llama3.1:8b'} id='lc_run--019efcd7-7f47-7492-b93e-16e981c286e3-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 15, 'output_tokens': 389, 'total_tokens': 404}
+BOT RESPONSE: Hello! How can I assist you today?
 =====================================================
 
 
 =====================================================
-TIME: 2026-06-25 09:05:04,412
+TIME: 2026-06-25 13:16:05,341
 LEVEL: INFO
 
-LATENCY: 65.34
+LATENCY: 22.7
 =====================================================
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,326
+TIME: 2026-06-25 13:16:05,341
+LEVEL: INFO
+
+EVALUATION SCORE: 0.9
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:17:42,045
+LEVEL: INFO
+
+USER QUESTION: Hello
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:17:43,363
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:17:46,434
+LEVEL: INFO
+
+BOT RESPONSE: Hello! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:17:46,434
+LEVEL: INFO
+
+LATENCY: 4.39
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:17:46,434
+LEVEL: INFO
+
+EVALUATION SCORE: 0.95
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:19:17,713
+LEVEL: INFO
+
+USER QUESTION: Hi
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:19:18,837
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:19:21,812
+LEVEL: INFO
+
+BOT RESPONSE: Hello! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:19:21,812
+LEVEL: INFO
+
+LATENCY: 4.1
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:19:21,812
+LEVEL: INFO
+
+EVALUATION SCORE: 0.9
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:15,923
+LEVEL: INFO
+
+USER QUESTION: Hello
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:17,305
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:20,382
+LEVEL: INFO
+
+BOT RESPONSE: Hello! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:20,383
+LEVEL: INFO
+
+LATENCY: 4.46
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:20,383
+LEVEL: INFO
+
+EVALUATION SCORE: 0.95
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:21:28,282
 LEVEL: INFO
 
 USER QUESTION: what is langchain?
@@ -98,7 +226,7 @@ USER QUESTION: what is langchain?
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,339
+TIME: 2026-06-25 13:21:28,283
 LEVEL: INFO
 
 Loading faiss with AVX512 support.
@@ -106,7 +234,7 @@ Loading faiss with AVX512 support.
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,339
+TIME: 2026-06-25 13:21:28,283
 LEVEL: INFO
 
 Could not load library with AVX512 support due to:
@@ -115,7 +243,7 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,339
+TIME: 2026-06-25 13:21:28,283
 LEVEL: INFO
 
 Loading faiss with AVX2 support.
@@ -123,7 +251,7 @@ Loading faiss with AVX2 support.
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,339
+TIME: 2026-06-25 13:21:28,283
 LEVEL: INFO
 
 Could not load library with AVX2 support due to:
@@ -132,7 +260,7 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,340
+TIME: 2026-06-25 13:21:28,283
 LEVEL: INFO
 
 Loading faiss.
@@ -140,7 +268,7 @@ Loading faiss.
 
 
 =====================================================
-TIME: 2026-06-25 09:08:10,360
+TIME: 2026-06-25 13:21:28,333
 LEVEL: INFO
 
 Successfully loaded faiss.
@@ -148,7 +276,7 @@ Successfully loaded faiss.
 
 
 =====================================================
-TIME: 2026-06-25 09:08:12,487
+TIME: 2026-06-25 13:21:31,289
 LEVEL: INFO
 
 HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
@@ -156,7 +284,7 @@ HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
 
 
 =====================================================
-TIME: 2026-06-25 09:08:13,300
+TIME: 2026-06-25 13:22:32,821
 LEVEL: INFO
 
 HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
@@ -164,41 +292,325 @@ HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
 
 
 =====================================================
-TIME: 2026-06-25 09:09:17,020
+TIME: 2026-06-25 13:22:42,340
 LEVEL: INFO
 
-BOT RESPONSE: LangChain is an open-source framework for building large language models (LLMs) and multimodal AI applications. It's designed to make it easier for developers to create, train, and deploy LLMs that can understand and generate human-like text.
-
-Here are some key features of LangChain:
-
-1. **Modular architecture**: LangChain is built on a modular architecture, which allows developers to easily combine different components (e.g., models, databases, APIs) to create complex AI applications.
-2. **LLM integration**: LangChain provides pre-built integrations with popular LLMs like LLaMA, BERT, and RoBERTa, making it easy to incorporate these models into your application.
-3. **Data management**: LangChain includes tools for managing large datasets, including data loading, preprocessing, and caching.
-4. **Model training**: LangChain provides a simple interface for training LLMs from scratch or fine-tuning pre-trained models on custom datasets.
-5. **Multimodal support**: LangChain supports multimodal inputs (e.g., text, images, audio) and outputs (e.g., text, images, videos).
-6. **API-first design**: LangChain is designed with APIs in mind, making it easy to integrate with other applications and services.
-
-LangChain's goals are to:
-
-1. Simplify the development of LLM-based applications
-2. Improve the efficiency and scalability of LLM training and deployment
-3. Foster collaboration among developers, researchers, and organizations working on AI projects
-
-Some potential use cases for LangChain include:
-
-1. **Chatbots**: Build conversational interfaces that can understand natural language inputs and respond accordingly.
-2. **Content generation**: Create applications that generate text, images, or videos based on user input or prompts.
-3. **Question answering**: Develop systems that can answer complex questions by combining multiple sources of information.
-4. **Summarization**: Build tools that summarize long documents or articles into concise, easily digestible formats.
-
-Overall, LangChain is an exciting project that has the potential to democratize access to LLMs and make it easier for developers to build innovative AI applications.
+BOT RESPONSE: LangChain is an open-source framework that makes it easier to build applications powered by large language models (LLMs) like GPT-4, Claude, or LLaMA.
 =====================================================
 
 
 =====================================================
-TIME: 2026-06-25 09:09:17,020
+TIME: 2026-06-25 13:22:42,341
 LEVEL: INFO
 
-LATENCY: 66.69
+LATENCY: 74.06
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 13:22:42,341
+LEVEL: INFO
+
+EVALUATION SCORE: 0.95
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,311
+LEVEL: INFO
+
+USER QUESTION: Explain LangGraph architecture
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,331
+LEVEL: INFO
+
+Loading faiss with AVX512 support.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,331
+LEVEL: INFO
+
+Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,331
+LEVEL: INFO
+
+Loading faiss with AVX2 support.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,331
+LEVEL: INFO
+
+Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,331
+LEVEL: INFO
+
+Loading faiss.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:35,373
+LEVEL: INFO
+
+Successfully loaded faiss.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:12:38,058
+LEVEL: INFO
+
+HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:13:48,062
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:14:04,206
+LEVEL: INFO
+
+BOT RESPONSE: LangChain is an open-source framework that makes it easier to build applications powered by large language models (LLMs) like GPT-4, Claude, or LLaMA. It helps you: Connect LLMs with external data (like PDFs, APIs, or databases) Create chatbots, agents, search tools, and automation workflows Chain multiple steps or prompts together in a structured way
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:14:04,206
+LEVEL: INFO
+
+LATENCY: 88.89
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:14:04,206
+LEVEL: INFO
+
+EVALUATION SCORE: 0.78
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:14:17,896
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:50:13,646
+LEVEL: INFO
+
+USER QUESTION: Hi
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:50:29,371
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:50:33,321
+LEVEL: INFO
+
+BOT RESPONSE: Hello! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:50:33,322
+LEVEL: INFO
+
+LATENCY: 19.68
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:50:33,322
+LEVEL: INFO
+
+EVALUATION SCORE: 0.9
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:58:50,835
+LEVEL: INFO
+
+USER QUESTION: Hello
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:59:02,523
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:59:05,859
+LEVEL: INFO
+
+BOT RESPONSE: Hello! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:59:05,859
+LEVEL: INFO
+
+LATENCY: 15.02
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 14:59:05,859
+LEVEL: INFO
+
+EVALUATION SCORE: 0.95
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,809
+LEVEL: INFO
+
+USER QUESTION: hai
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,817
+LEVEL: INFO
+
+Loading faiss with AVX512 support.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,817
+LEVEL: INFO
+
+Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,817
+LEVEL: INFO
+
+Loading faiss with AVX2 support.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,817
+LEVEL: INFO
+
+Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,818
+LEVEL: INFO
+
+Loading faiss.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:34,843
+LEVEL: INFO
+
+Successfully loaded faiss.
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:01:37,546
+LEVEL: INFO
+
+HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:02:33,140
+LEVEL: INFO
+
+HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:02:37,128
+LEVEL: INFO
+
+BOT RESPONSE: Hai! How can I assist you today?
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:02:37,128
+LEVEL: INFO
+
+LATENCY: 62.32
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:02:37,128
+LEVEL: INFO
+
+EVALUATION SCORE: 0.95
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:06:39,283
+LEVEL: INFO
+
+USER QUESTION: \U0001f44b Say hello to the assistant
+=====================================================
+
+
+=====================================================
+TIME: 2026-06-25 15:06:41,963
+LEVEL: INFO
+
+HTTP Request: POST http://localhost:11434/api/embed "HTTP/1.1 200 OK"
 =====================================================
 
