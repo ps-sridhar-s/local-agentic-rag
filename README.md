@@ -26,6 +26,9 @@ The system ingests documents, performs intelligent chunking, generates embedding
 
 # 🏗️ Architecture
 
+<img width="1536" height="1024" alt="ChatGPT Image Jun 25, 2026, 10_48_08 AM" src="https://github.com/user-attachments/assets/cd43d174-1f4b-47b6-807b-449d8c1f1ae2" />
+
+
 ```text
                         +----------------+
                         | User Interface |
