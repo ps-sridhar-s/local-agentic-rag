@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🚀 Local Agentic RAG Chatbot
 
 An enterprise-grade **Agentic Retrieval-Augmented Generation (RAG)** system built using **LangGraph, LangChain, FastAPI, FAISS, and Ollama**.
@@ -322,7 +322,4 @@ The system includes:
 
 AI Engineer | Agentic AI | GenAI | RAG | LangGraph | LangChain
 
-=======
-# local-agentic-rag
-Built an end-to-end Agentic RAG system using Python, LangChain, Ollama, ChromaDB, and Streamlit. Developed automated data ingestion pipelines with web scraping, chunking, embeddings, and vector search. Implemented query rewriting agents for context-aware conversations, enabling accurate, source-grounded responses using local LLMs
->>>>>>> 1f7188b1a522936168f9c2954de99731dced6896
+
