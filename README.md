@@ -319,6 +319,11 @@ The system includes:
 
 ---
 
+# UI Reference
+
+<img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/d0d88bef-cc70-4344-b7e1-502926fbfc71" />
+
+
 # 👨‍💻 Author
 
 **Sridhar S**
