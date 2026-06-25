@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🤖 Agentic AI
+        </div>
+
+        <button class="new-chat-btn" onclick="clearChat()">
+            + New Chat
+        </button>
+
+        <div class="history-title">
+            Chat History
+        </div>
+
+        <div id="history-container">
+        </div>
+
+    </div>
+
+    <!-- Main Chat -->
+
+    <div class="chat-container">
+
+        <div class="header">
+            LangGraph AI Assistant
+        </div>
+
+        <div id="chat-box">
+
+            <div class="welcome">
+                <h1>How can I help you today?</h1>
+                <p>Ask anything about LangChain, Python, AI, or your knowledge base.</p>
+            </div>
+
+        </div>
+
+        <div class="input-container">
+
+            <textarea
+                    id="message-input"
+                    placeholder="Message Agentic AI..."
+                    rows="1"></textarea>
+
+            <button onclick="sendMessage()">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
